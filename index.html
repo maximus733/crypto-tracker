@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Finance Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <div class="sidebar-panel">
+            <header>
+                <h2>Asset Stream Terminal</h2>
+                <p>Multi-file network telemetry matrix</p>
+            </header>
+
+            <div class="control-panel">
+                <div class="asset-profile">
+                    <img id="assetLogo" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="logo">
+                    <label for="cryptoSelect">Active Node:</label>
+                </div>
+                <select id="cryptoSelect">
+                    <option value="bitcoin">Bitcoin (BTC)</option>
+                    <option value="ethereum">Ethereum (ETH)</option>
+                    <option value="solana">Solana (SOL)</option>
+                    <option value="cardano">Cardano (ADA)</option>
+                    <option value="ripple">Ripple (XRP)</option>
+                    <option value="polkadot">Polkadot (DOT)</option>
+                    
+                    <option value="binancecoin">BNB (BNB)</option>
+                    <option value="chainlink">Chainlink (LINK)</option>
+                    <option value="avalanche-2">Avalanche (AVAX)</option>
+                    
+                    <option value="dogecoin">Dogecoin (DOGE)</option>
+                    <option value="shiba-inu">Shiba Inu (SHIB)</option>
+                    <option value="pepe">Pepe (PEPE)</option>
+                </select>
+            </div>
+
+            <main class="metrics-stack">
+                <div class="metric-card price-card" id="priceCard">
+                    <h3>Current Value</h3>
+                    <div class="value" id="livePrice">$0.00</div>
+                    <span class="trend-badge" id="trendBadge">--</span>
+                </div>
+                
+                <div class="metric-card volume-card">
+                    <h3>24h Market Cap</h3>
+                    <div class="value sub-val" id="marketCap">$0.00</div>
+                </div>
+            </main>
+        </div>
+
+        <div class="main-chart-panel">
+            <div class="timeframe-selector">
+                <button class="tf-btn active" data-days="1" data-interval="hourly">1D</button>
+                <button class="tf-btn" data-days="7" data-interval="daily">1W</button>
+                <button class="tf-btn" data-days="30" data-interval="daily">1M</button>
+            </div>
+            
+            <div class="canvas-wrapper">
+                <canvas id="cryptoChart"></canvas>
+            </div>
+
+            <footer class="status-bar">
+                <span class="pulse-indicator"></span>
+                <span id="timestamp">Connecting to live feed...</span>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
